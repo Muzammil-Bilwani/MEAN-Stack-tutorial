@@ -3,27 +3,27 @@
 - What is HTML
 - Basic Structure of an HTML Document
 - Common HTML Elements
-- Headings, Paragraphs, Lists, Links, Images, Tables, etc.
+  - Headings, Paragraphs, Lists, Links, Images, Tables, etc.
 - Element Attributes
-- id, class, style, etc.
+  - id, class, style, etc.
 - Semantic HTML Elements
-- header, nav, article, section, etc.
+  - header, nav, article, section, etc.
 - Text Formatting
-- Bold, Italic, Underline, etc.
+  - Bold, Italic, Underline, etc.
 - Styles with CSS
-- Internal, External, Inline CSS
+  - Internal, External, Inline CSS
 - CSS Selectors & Properties
-- Classes, IDs, Elements, Backgrounds, Borders, etc.
+  - Classes, IDs, Elements, Backgrounds, Borders, etc.
 - Adding Images & Videos
-- Embedding Audio & YouTube Videos
+  - Embedding Audio & YouTube Videos
 - HTML5 Multimedia Elements
-- audio, video, etc.
+  - audio, video, etc.
 - Form Elements & Attributes
-- input, textarea, select, button, etc.
-- Form Handling with JavaScript & PHP
-- Submitting Forms, Form Validation, etc.
+  - input, textarea, select, button, etc.
+- Form Handling with JavaScript
+  - Submitting Forms, Form Validation, etc.
 - HTML Best Practices & Accessibility
-- Writing Clean & Valid HTML Code
+  - Writing Clean & Valid HTML Code
 
 ### Tags
 
