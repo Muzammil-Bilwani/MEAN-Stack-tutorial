@@ -1,0 +1,56 @@
+## Week 2 - Lets write some mark up - HTML
+
+- What is HTML
+- Basic Structure of an HTML Document
+- Common HTML Elements
+- Headings, Paragraphs, Lists, Links, Images, Tables, etc.
+- Element Attributes
+- id, class, style, etc.
+- Semantic HTML Elements
+- header, nav, article, section, etc.
+- Text Formatting
+- Bold, Italic, Underline, etc.
+- Styles with CSS
+- Internal, External, Inline CSS
+- CSS Selectors & Properties
+- Classes, IDs, Elements, Backgrounds, Borders, etc.
+- Adding Images & Videos
+- Embedding Audio & YouTube Videos
+- HTML5 Multimedia Elements
+- audio, video, etc.
+- Form Elements & Attributes
+- input, textarea, select, button, etc.
+- Form Handling with JavaScript & PHP
+- Submitting Forms, Form Validation, etc.
+- HTML Best Practices & Accessibility
+- Writing Clean & Valid HTML Code
+
+### Tags
+
+- `<html>` : The root element of an HTML document
+- `<head>` : Contains meta information about the document
+- `<title>` : Specifies a title for the document
+- `<body>` : Defines the document's body
+- `<h1>` to `<h6>` : Defines HTML headings
+- `<p>` : Defines a paragraph
+- `<br>` : Inserts a single line break
+- `<hr>` : Defines a thematic change in the content
+- `<pre>` : Defines preformatted text
+- `<b>` : Defines bold text
+- `<strong>` : Defines important text
+- `<i>` : Defines a part of text in an alternate voice or mood
+- `<em>` : Defines emphasized text
+- `<mark>` : Defines marked/highlighted text
+- `<small>` : Defines smaller text
+- `<del>` : Defines deleted text
+- `<ins>` : Defines inserted text
+- `<sub>` : Defines subscripted text
+- `<sup>` : Defines superscripted text
+- `<blockquote>` : Defines a section that is quoted from another source
+- `<q>` : Defines a short quotation
+- `<abbr>` : Defines an abbreviation or an acronym
+- `<img>` : Defines an image
+- `<a>` : Defines a hyperlink
+- `<ul>` : Defines an unordered list
+- `<ol>` : Defines an ordered list
+- `<li>` : Defines a list item
