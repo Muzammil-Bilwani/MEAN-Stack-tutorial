@@ -20,8 +20,6 @@
   - audio, video, etc.
 - Form Elements & Attributes
   - input, textarea, select, button, etc.
-- Form Handling with JavaScript
-  - Submitting Forms, Form Validation, etc.
 - HTML Best Practices & Accessibility
   - Writing Clean & Valid HTML Code
 
@@ -54,3 +52,83 @@
 - `<ul>` : Defines an unordered list
 - `<ol>` : Defines an ordered list
 - `<li>` : Defines a list item
+- `<dl>` : Defines a description list
+- `<dt>` : Defines a term/name in a description list
+- `<dd>` : Defines a description of a term/name in a description list
+- `<table>` : Defines a table
+- `<tr>` : Defines a row in a table
+- `<th>` : Defines a header cell in a table
+- `<td>` : Defines a cell in a table
+- `<caption>` : Defines a table caption
+- `<thead>` : Groups the header content in a table
+- `<tbody>` : Groups the body content in a table
+- `<tfoot>` : Groups the footer content in a table
+- `<col>` : Specifies column properties for each column within a `<colgroup>` element
+- `<colgroup>` : Specifies a group of one or more columns in a table for formatting
+- `<iframe>` : Defines an inline frame
+- `<div>` : Defines a section in a document
+- `<span>` : Defines a section in a document
+- `<header>` : Defines a header for a document or a section
+- `<nav>` : Defines a set of navigation links
+- `<main>` : Specifies the main content of a document
+- `<section>` : Defines a section in a document
+- `<article>` : Defines an independent self-contained content
+- `<aside>` : Defines content aside from the page content
+- `<footer>` : Defines a footer for a document or a section
+- `<details>` : Defines additional details that the user can view or hide
+- `<summary>` : Defines a visible heading for a `<details>` element
+- `<dialog>` : Defines a dialog box or window
+- `<figure>` : Specifies self-contained content
+- `<figcaption>` : Defines a caption for a `<figure>` element
+- `<time>` : Defines a date/time
+- `<progress>` : Represents the progress of a task
+- `<meter>` : Defines a scalar measurement within a known range (a gauge)
+- `<data>` : Links the given content with a machine-readable translation
+- `<ruby>` : Defines a ruby annotation (for East Asian typography)
+- `<rt>` : Defines an explanation/pronunciation of characters (for East Asian typography)
+- `<input>` : Defines an input control
+- `<textarea>` : Defines a multiline input control (text area)
+- `<select>` : Defines a drop-down list
+- `<option>` : Defines an option in a drop-down list
+- `<button>` : Defines a clickable button
+- `<label>` : Defines a label for an `<input>` element
+- `<fieldset>` : Groups related elements in a form
+- `<legend>` : Defines a caption for a `<fieldset>` element
+- `<datalist>` : Specifies a list of pre-defined options for input controls
+- `<optgroup>` : Defines a group of related options in a drop-down list
+- `<form>` : Defines an HTML form for user input
+- `<audio>` : Defines sound, such as music or other audio streams
+- `<video>` : Defines a video or movie
+- `<source>` : Defines multiple media resources for media elements (`<video>` and `<audio>`)
+- `<track>` : Defines text tracks for media elements (`<video>` and `<audio>`)
+- `<embed>` : Defines a container for an external (non-HTML) application
+- `<object>` : Defines an embedded object
+
+### Attributes
+
+- `id` : Specifies a unique id for an HTML element
+- `class` : Specifies one or more classnames for an HTML element
+- `style` : Specifies an inline CSS style for an HTML element
+- `src` : Specifies the URL of the media file
+- `href` : Specifies the URL of the page the link goes to
+- `alt` : Specifies an alternate text for an image, when the image cannot be displayed
+- `title` : Specifies extra information about an element
+- `width` : Specifies the width of an element
+- `height` : Specifies the height of an element
+- `target` : Specifies where to open the linked document
+- `rel` : Specifies the relationship between the current document and the linked document
+- `type` : Specifies the media type of the linked document
+- `value` : Specifies the value of an input element
+- `placeholder` : Specifies a short hint that describes the expected value of an input field
+- `disabled` : Specifies that an input element should be disabled
+
+### Practice Questions & Exercises
+
+- [HTML Practice Questions](https://www.w3schools.com/html/html_quiz.asp)
+- [HTML Exercises](https://www.w3schools.com/html/exercise.asp)
+
+- Create a webpage that displays information about a conference. Use h1 tags to define the conference title, p tags to add information about the conference, and ul tags to list the conference schedule. Use a tags to link to the conference registration page and img tags to display the conference logo.
+- Create a webpage that displays a portfolio of work. Use div tags to group the work into categories (e.g. graphic design, web development) and img tags to display samples of the work. Use p tags to add descriptions for each piece of work and a tags to link to the full project.
+- Create a webpage that displays a product catalog. Use ul tags to list the products and li tags to define each product. Use img tags to display product images, h2 tags to add product names, and p tags to add product descriptions. Use a tags to link to the product page and span tags to add pricing information.
+- Create a webpage that displays information about a city. Use h1 tags to define the city name, img tags to display city photos, and p tags to add information about the city. Use table tags to list city attractions and a tags to link to the attraction pages. Use span tags to add pricing information for the attractions.
+- Create a webpage that displays a blog. Use h1 tags to define the blog title, p tags to add blog posts, and ul tags to list recent posts. Use img tags to display post images, h2 tags to add post titles, and p tags to add post descriptions. Use a tags to link to the full post.
