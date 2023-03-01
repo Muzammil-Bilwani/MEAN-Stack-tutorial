@@ -1,0 +1,128 @@
+body {
+    background-color: black;
+    background-image: url("./pasta-bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    transition: 0.3s ease-in-out;
+    backdrop-filter: blur(5px);
+}
+
+.title,
+.text {
+    color: white;
+}
+
+#container {
+    height: 100%;
+}
+
+.center {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+.orderBtn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.orderBtn:hover {
+    background-color: white;
+    color: black;
+}
+
+.title {
+    padding: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* padding: top right bottom left */
+    /* padding: topbottom leftright */
+    margin: 12px;
+}
+
+.previewLink {
+    color: #A9482A;
+}
+
+.previewLink:hover {
+    font-weight: bold;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.form>label {
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.input-phone {
+    width: 200px;
+    background-color: transparent;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 5px;
+    margin: 10px;
+}
+
+.input-phone:focus {
+    outline: none;
+    background-color: whitesmoke;
+}
+
+.input-phone::placeholder {
+    color: white;
+}
+
+.whatsapp-icon {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+}
+
+.whatsapp-icon:hover {
+    width: 40px;
+    height: 40px;
+}
