@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 20vw;
+    margin: 4px;
+    padding: 24px;
+    color: white;
+    flex-grow: 1;
+    font-size: 24px;
+    background-color: blue;
+}
+
+.item3 {
+    flex-grow: 5;
+}
