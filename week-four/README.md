@@ -24,7 +24,7 @@ Rapidly build modern websites without ever leaving your HTML.
 
 A utility-first CSS framework packed with classes like `flex`, `pt-4`, `text-center` and `rotate-90` that can be composed to build any design, directly in your markup.
 
-<img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1623301804718/iorBir8lN.gif?auto=format,compress&gif-q=60&format=webm"/>
+<img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1623301804718/iorBir8lN.gif?auto=format,compress&gif-q=60&format=webm" width="100%" />
 
 ## How to use Tailwind?
 
