@@ -1,5 +1,7 @@
 # Week Four - Lets learn Tailwind and make our life easier
 
+<br/>
+
 <p align="center">
   <a href="https://tailwindcss.com" target="_blank">
     <picture>
@@ -122,12 +124,14 @@ Using utility classes like this allows us to quickly and easily style our HTML e
 
 _Output_
 
-<img src="./output.png"/>
+<img src="https://raw.githubusercontent.com/Muzammil-Bilwani/MEAN-Stack-tutorial/main/week-four/outpul.png"/>
 
 ### Best way to learn Tailwind CSS
 
 Tailwind can be easily learn by its documentation and by watching videos. I have listed some of the best videos to learn Tailwind CSS.
 
-- [Tailwind CSS Crash Course](https://www.youtube.com/watch?v=UBOj6rqRUME)
+[Tailwind CSS Crash Course](https://www.youtube.com/watch?v=UBOj6rqRUME)
+
+---
 
 For full documentation, visit [tailwindcss.com](https://tailwindcss.com/).
