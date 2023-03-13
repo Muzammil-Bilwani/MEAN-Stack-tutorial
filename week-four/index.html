@@ -2,23 +2,90 @@
 <html>
   <head>
     <title>My Website</title>
+    <style>
+      body {
+        background-color: #f9cfcb;
+      }
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="m-24">
-    <h1 class="text-4xl font-bold text-center text-blue-500">
-      Welcome to My Website
-    </h1>
-    <h2 class="text-2xl font-semibold text-gray-800">About Us</h2>
-    <p class="text-lg text-gray-600">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus,
-      est vel scelerisque bibendum, mi enim elementum odio, vel faucibus nibh
-      nibh ut quam. Sed ut justo euismod, bibendum quam a, rhoncus eros.
-    </p>
-    <h2 class="text-2xl font-semibold text-gray-800 mt-8">Our Services</h2>
-    <ul class="list-disc pl-8">
-      <li class="text-lg text-gray-600">Service 1</li>
-      <li class="text-lg text-gray-600">Service 2</li>
-      <li class="text-lg text-gray-600">Service 3</li>
-    </ul>
+  <body>
+    <nav class="mx-16 my-8">
+      <div class="flex items-center justify-between flex-wrap">
+        <p class="text-3xl" style="color: #312a37">baims</p>
+
+        <div
+          class="bg-transparent relative text-gray-600 focus-within:text-gray-400"
+        >
+          <span class="absolute inset-y-0 left-0 flex items-center px-4">
+            <button
+              type="submit"
+              class="ml-2 p-2 focus:outline-none focus:shadow-outline"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                class="w-6 h-6"
+              >
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </button>
+          </span>
+          <input
+            type="search"
+            class="w-72 ml-4 py-3 text-sm text-white bg-transparent border border-black rounded-full pl-12 focus:outline-none focus:bg-white focus:text-gray-900 placeholder-gray-900"
+            placeholder="Search for anything here"
+          />
+        </div>
+        <div class="flex items-center justify-between space-x-4 flex-wrap">
+          <a class="text-gray-900">Apply as a Instructor</a>
+          <a class="text-gray-900">Sign up</a>
+          <button
+            class="text-white p-3 px-12 rounded-full"
+            style="background-color: #312a37"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mx-16 flex justify-between items-center flex-nowrap">
+      <div class="flex flex-col w-3/6">
+        <h1 class="text-7xl font-bold" style="color: #312a37">
+          Study anytime you are where
+        </h1>
+        <p
+          class="mt-4 text-2xl text-gray-500 animate__animated animate__slideInUp"
+        >
+          Study anytime you want and where you want. We have a lot of courses
+        </p>
+      </div>
+      <div>
+        <img class="w-fit" src="image.png" />
+      </div>
+    </div>
+    <div class="bg-white flex justify-around py-8">
+      <div class="flex flex-col justify-center items-center">
+        <p class="text-4xl font-bold mb-4" style="color: #312a37">133+</p>
+        <p class="text-gray-500">Courses and subject</p>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <p class="text-4xl font-bold mb-4" style="color: #312a37">304+</p>
+        <p class="text-gray-500">Courses and subject</p>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <p class="text-4xl font-bold mb-4" style="color: #312a37">56k+</p>
+        <p class="text-gray-500">Courses and subject</p>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <p class="text-4xl font-bold mb-4" style="color: #312a37">11m+</p>
+        <p class="text-gray-500">Courses and subject</p>
+      </div>
+    </div>
   </body>
 </html>
