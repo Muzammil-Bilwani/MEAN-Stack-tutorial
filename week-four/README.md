@@ -135,3 +135,5 @@ Tailwind can be easily learn by its documentation and by watching videos. I have
 ---
 
 For full documentation, visit [tailwindcss.com](https://tailwindcss.com/).
+
+For cheat sheet visit [tailwind-cheat-sheet](https://tailwindcomponents.com/cheatsheet/)
