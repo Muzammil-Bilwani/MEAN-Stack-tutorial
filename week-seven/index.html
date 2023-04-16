@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Grocery Bill</title>
+  </head>
+  <body>
+    <div class="flex flex-row gap-4 justify-around items-start mt-12 h-screen">
+      <div class="flex flex-col gap-4 justify-center items-center">
+        <div>
+          <label
+            for="riceQty"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Rice Quantity</label
+          >
+          <div class="relative mt-2 rounded-md shadow-sm">
+            <input
+              type="text"
+              name="riceQty"
+              class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              placeholder="0.00"
+            />
+          </div>
+        </div>
+        <div>
+          <label
+            for="beansQty"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Beans Quantity</label
+          >
+          <div class="relative mt-2 rounded-md shadow-sm">
+            <input
+              type="text"
+              name="beansQty"
+              class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              placeholder="0.00"
+            />
+          </div>
+        </div>
+        <div>
+          <label
+            for="chickenQty"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Chicken Quantity</label
+          >
+          <div class="relative mt-2 rounded-md shadow-sm">
+            <input
+              type="text"
+              name="chickenQty"
+              class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              placeholder="0.00"
+            />
+          </div>
+        </div>
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Calculate
+        </button>
+      </div>
+      <div class="card">
+        <div class="flex flex-col gap-4">
+          <h2>Price Card</h2>
+          <p>Rice Price: <b>4$</b></p>
+          <p>Beans Price: <b>3$</b></p>
+          <p>Chicken Price: <b>7$</b></p>
+          <p>Total Price: <b id="total"></b></p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const calculate = () => {
+      const riceQty = document.querySelector('input[name="riceQty"]').value
+      const beansQty = document.querySelector('input[name="beansQty"]').value
+      const chickenQty = document.querySelector(
+        'input[name="chickenQty"]'
+      ).value
+
+      const ricePrice = 4
+      const beansPrice = 3
+      const chickenPrice = 7
+
+      const total =
+        riceQty * ricePrice + beansQty * beansPrice + chickenQty * chickenPrice
+
+      document.querySelector("#total").innerHTML = total
+    }
+
+    document.querySelector("button").addEventListener("click", calculate)
+  </script>
+</html>
