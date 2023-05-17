@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo Application</title>
+    <style>
+      body {
+        background-color: #e3e9ff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .bar {
+        background-color: #af7eeb;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        width: 400px;
+        border-radius: 5px;
+        color: white;
+        font-size: 18px;
+      }
+      .todo-icon {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+      .todo-list {
+        width: 400px;
+        margin-top: 20px;
+        background-color: white;
+      }
+      .todo-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        height: 40px;
+      }
+      .todo-add-btn {
+        background-color: #af7eeb;
+        color: white;
+        padding: 10px 20px;
+        margin-top: -12px;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="bar">
+      <h2 class="heading">Website Todo</h2>
+    </div>
+    <div class="todo-list shadow-lg">
+      <div class="todo-item" id="todo-1">
+        <p class="todo-task-title">Sent Emails</p>
+        <img class="todo-icon" src="./deleteicon.png" onclick="deleteTodo(1)" />
+      </div>
+      <div class="todo-item" id="todo-2">
+        <p class="todo-task-title">Buy Coffe</p>
+        <img class="todo-icon" src="./deleteicon.png" onclick="deleteTodo(2)" />
+      </div>
+      <div class="todo-item" id="todo-3">
+        <p class="todo-task-title">Go Home</p>
+        <img class="todo-icon" src="./deleteicon.png" onclick="deleteTodo(3)" />
+      </div>
+      <div class="todo-item" id="todo-4">
+        <p class="todo-task-title">Read book</p>
+        <img class="todo-icon" src="./deleteicon.png" onclick="deleteTodo(4)" />
+      </div>
+    </div>
+    <button class="todo-add-btn rounded-md" onclick="addNewsTask()">
+      + New Task
+    </button>
+  </body>
+  <script src="./script.js"></script>
+</html>
