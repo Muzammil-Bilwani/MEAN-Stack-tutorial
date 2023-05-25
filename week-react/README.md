@@ -74,7 +74,6 @@ Open your project in your favorite code editor and start coding.
 - src
   - assets
   - components
-  - pages
   - App.js
   - index.js
 - .gitignore
