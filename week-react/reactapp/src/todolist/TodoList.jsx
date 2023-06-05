@@ -22,6 +22,13 @@ export const TodoList = () => {
     }
   ])
 
+  const addTask = () => {
+    const title = prompt("Enter the task title")
+    const newTask = { id: items.length + 1, title }
+    const newItems = [...items, newTask]
+    setItems(newItems)
+  }
+
   return (
     <div>
       <div className="bar">
@@ -32,6 +39,9 @@ export const TodoList = () => {
           <TodoItem key={item.id} title={item.title} />
         ))}
       </div>
+      <button className="todo-add-btn rounded-md" onClick={addTask}>
+        + New Task
+      </button>
     </div>
   )
 }
