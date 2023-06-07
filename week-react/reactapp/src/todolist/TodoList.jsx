@@ -22,8 +22,17 @@ export const TodoList = () => {
     }
   ])
 
+  const deleteTodo = (id) => {
+    const toBeDeletedIndex = items.findIndex((item) => item.id === id)
+    items.splice(toBeDeletedIndex, 1)
+    setItems([...items])
+  }
+
   const addTask = () => {
     const title = prompt("Enter the task title")
+    if (!title) {
+      return
+    }
     const newTask = { id: items.length + 1, title }
     const newItems = [...items, newTask]
     setItems(newItems)
@@ -36,7 +45,13 @@ export const TodoList = () => {
       </div>
       <div className="todo-list shadow-lg">
         {items.map((item) => (
-          <TodoItem key={item.id} title={item.title} />
+          <TodoItem
+            key={item.id}
+            title={item.title}
+            deleteTodo={() => {
+              deleteTodo(item.id)
+            }}
+          />
         ))}
       </div>
       <button className="todo-add-btn rounded-md" onClick={addTask}>
