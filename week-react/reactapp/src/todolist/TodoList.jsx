@@ -1,6 +1,7 @@
 import { useState } from "react"
 import "./todo.css"
 import { TodoItem } from "./TodoItem"
+import { AddTodo } from "./AddTodo"
 
 export const TodoList = () => {
   const [items, setItems] = useState([
@@ -28,8 +29,7 @@ export const TodoList = () => {
     setItems([...items])
   }
 
-  const addTask = () => {
-    const title = prompt("Enter the task title")
+  const addTask = (title) => {
     if (!title) {
       return
     }
@@ -54,9 +54,10 @@ export const TodoList = () => {
           />
         ))}
       </div>
-      <button className="todo-add-btn rounded-md" onClick={addTask}>
+      <AddTodo addTodo={addTask} />
+      {/* <button className="todo-add-btn rounded-md" onClick={addTask}>
         + New Task
-      </button>
+      </button> */}
     </div>
   )
 }
