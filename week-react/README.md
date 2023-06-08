@@ -86,3 +86,139 @@ Open your project in your favorite code editor and start coding.
   yarn.lock is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. This ensures that all people using your project will get the same set of dependencies.
 - vite.config.js
   vite.config.js is the config file for Vite. It is optional and you can delete it if you don’t need it.
+
+### React Components
+
+Components are the building blocks of any React app and a typical React app will have many of these. Simply put, a component is a JavaScript class or function that optionally accepts inputs i.e. properties(props) and returns a React element that describes how a section of the UI (User Interface) should appear.
+
+#### Types of Components
+
+There are two types of components in React:
+
+1. Class Components ( Old way of writing components )
+2. Functional Components ( New way of writing components )
+
+#### Functional Components
+
+Functional components are basic JavaScript functions. These are typically arrow functions but can also be created with the regular function keyword.
+
+```js
+import React from "react"
+
+const App = () => {
+  return <div>Hello World</div>
+}
+
+export default App
+```
+
+### JSX
+
+JSX is a syntax extension to JavaScript. It is similar to a template language, but it has full power of JavaScript. JSX gets compiled to React.createElement() calls which return plain JavaScript objects called “React elements”. React elements are then rendered to the DOM.
+
+```js
+import React from "react"
+
+const App = () => {
+  return <div>Hello World</div>
+}
+
+export default App
+```
+
+### Props
+
+Props are inputs to a React component. They are data passed down from a parent component to a child component. Props are passed to components via HTML attributes.
+
+```js
+import React from "react"
+
+const App = () => {
+  return <Greeting name="Muzammil" />
+}
+
+const Greeting = (props) => {
+  return <div>Hello {props.name}</div>
+}
+
+export default App
+```
+
+### State
+
+State is a JavaScript object that stores a component’s dynamic data and determines the component’s behavior. Because state is dynamic, it enables a component to keep track of changing information in between renders and for it to be dynamic and interactive.
+
+```js
+import React, { useState } from "react"
+
+const App = () => {
+  const [name, setName] = useState("Muzammil")
+
+  return (
+    <div>
+      <Greeting name={name} />
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+    </div>
+  )
+}
+```
+
+### Hooks
+
+Hooks are functions that let you “hook into” React state and lifecycle features from function components. Hooks don’t work inside classes — they let you use React without classes.
+
+#### Code Example
+
+```js
+import React, { useState } from "react"
+
+const App = () => {
+  const [name, setName] = useState("Muzammil")
+
+  return (
+    <div>
+      <Greeting name={name} />
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+    </div>
+  )
+}
+```
+
+### useEffect
+
+The Effect Hook lets you perform side effects in function components:
+
+```js
+import React, { useState, useEffect } from "react"
+
+const App = () => {
+  const [name, setName] = useState("Muzammil")
+
+  useEffect(() => {
+    console.log("Component Mounted")
+  }, [])
+
+  return (
+    <div>
+      <Greeting name={name} />
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+    </div>
+  )
+}
+```
+
+### React Router
+
+React Router is a collection of navigational components that compose declaratively with your application. Whether you want to have bookmarkable URLs for your web app or a composable way to navigate in React Native, React Router works wherever React is rendering.
