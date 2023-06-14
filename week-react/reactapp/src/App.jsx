@@ -1,8 +1,9 @@
 import "./App.css"
-import { TodoList } from "./todolist/TodoList"
+// import { RecipeDetails } from "./Recepie/RecipeDetails"
+import { RecipeHome } from "./Recepie/RecipeHome"
 
 function App() {
-  return <TodoList />
+  return <RecipeHome />
 }
 
 export default App
