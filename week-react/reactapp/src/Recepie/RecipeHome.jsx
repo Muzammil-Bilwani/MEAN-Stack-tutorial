@@ -10,7 +10,6 @@ export const RecipeHome = () => {
           <RecipeItem key={index} recipe={recipe} />
         ))}
       </div>
-      kjhbkjk
     </div>
   )
 }
