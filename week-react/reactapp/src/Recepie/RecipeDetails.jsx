@@ -1,13 +1,25 @@
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { recipeList } from "./data"
 
 export const RecipeDetails = () => {
   const { id } = useParams()
+  const navigate = useNavigate()
+
   const recipe = recipeList[id - 1]
 
   return (
     <div>
-      <h1 className="text-4xl mt-8 mb-8">{recipe.name}</h1>
+      <div className="flex justify-between items-center">
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={() => {
+            navigate(-1)
+          }}
+        >
+          Back
+        </button>
+        <h1 className="text-4xl mt-8 mb-8">{recipe.name}</h1>
+      </div>
       <div className="grid grid-cols-2 gap-4">
         <div>
           <img
