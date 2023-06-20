@@ -9,7 +9,7 @@ const router = createBrowserRouter([
     element: <RecipeHome />,
     errorElement: (
       <>
-        <h1>Oops!</h1>
+        <h1>Handle Error</h1>
         <p>Sorry, an unexpected error has occurred.</p>
       </>
     )
