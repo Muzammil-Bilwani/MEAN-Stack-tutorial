@@ -2,6 +2,7 @@ import "./App.css"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { RecipeDetails } from "./Recepie/RecipeDetails"
 import { RecipeHome } from "./Recepie/RecipeHome"
+import { Shop } from "./Recepie/Shop"
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/details/:id",
     element: <RecipeDetails />
+  },
+  {
+    path: "/shop",
+    element: <Shop />
   }
 ])
 function App() {

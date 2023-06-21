@@ -1,17 +1,28 @@
 import { useParams, useNavigate } from "react-router-dom"
 import { recipeList } from "./data"
+import { useContext } from "react"
+import { ShoppingContext } from "../context/ShoppingContext"
 
 export const RecipeDetails = () => {
   const { id } = useParams()
   const navigate = useNavigate()
+  const { setIngredients } = useContext(ShoppingContext)
 
   const recipe = recipeList[id - 1]
+
+  const routeToShop = () => {
+    setIngredients(recipe.ingredients)
+    navigate("/shop")
+  }
 
   return (
     <div>
       <div className="flex justify-between items-center">
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          style={{
+            fontSize: 16
+          }}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
           onClick={() => {
             navigate(-1)
           }}
@@ -19,6 +30,15 @@ export const RecipeDetails = () => {
           Back
         </button>
         <h1 className="text-4xl mt-8 mb-8">{recipe.name}</h1>
+        <button
+          onClick={routeToShop}
+          style={{
+            fontSize: 16
+          }}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
+        >
+          Shop Now
+        </button>
       </div>
       <div className="grid grid-cols-2 gap-4">
         <div>
