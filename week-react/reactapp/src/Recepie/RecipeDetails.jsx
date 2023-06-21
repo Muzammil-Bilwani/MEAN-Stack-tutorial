@@ -1,57 +1,41 @@
-import { useParams, useNavigate } from "react-router-dom"
-import { recipeList } from "./data"
-import { useContext } from "react"
-import { ShoppingContext } from "../context/ShoppingContext"
+import { useParams, useNavigate } from "react-router-dom";
+import { recipeList } from "./data";
+import { RecipeItem } from "./RecipeItem";
 
 export const RecipeDetails = () => {
-  const { id } = useParams()
-  const navigate = useNavigate()
-  const { setIngredients } = useContext(ShoppingContext)
+  const { id } = useParams();
+  const navigate = useNavigate();
 
-  const recipe = recipeList[id - 1]
-
-  const routeToShop = () => {
-    setIngredients(recipe.ingredients)
-    navigate("/shop")
-  }
+  const recipe = recipeList[id - 1];
+  const relatedRecipes = recipeList.filter((r, index) => index !== id - 1);
 
   return (
-    <div>
-      <div className="flex justify-between items-center">
+    <div className="p-8">
+      <div className="flex flex-row justify-between h-12 mb-4">
         <button
-          style={{
-            fontSize: 16
-          }}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
+          className=" px-8 py-2 text-white text-2xl text-white-600 bg-blue-500 font-semibold rounded-full border border-white-200 hover:text-white hover:bg-blue-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
           onClick={() => {
-            navigate(-1)
+            navigate(-1);
           }}
         >
           Back
         </button>
-        <h1 className="text-4xl mt-8 mb-8">{recipe.name}</h1>
-        <button
-          onClick={routeToShop}
-          style={{
-            fontSize: 16
-          }}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
-        >
-          Shop Now
-        </button>
+        <h1 className="text-4xl font-semibold mt-8 mb-8 mr-24 underline ">
+          {recipe.name}
+        </h1>
       </div>
-      <div className="grid grid-cols-2 gap-4">
-        <div>
+      <div className="grid grid-cols-2 gap-4 ">
+        <div className="">
           <img
             style={{
-              objectFit: "contain"
+              objectFit: "contain",
             }}
             src={recipe.image}
             alt={recipe.name}
           />
         </div>
 
-        <div>
+        <div className="text-left ml-8">
           <h1 className="text-4xl mt-8 mb-8">Ingredients</h1>
           <ul className="list-decimal	list-inside">
             {recipe.ingredients.map((ingredient, index) => (
@@ -63,10 +47,10 @@ export const RecipeDetails = () => {
 
       <div>
         <div>
-          <h1 className="text-4xl mt-8 mb-8">Instructions</h1>
+          <h1 className="text-4xl font-semibold mt-8 mb-8">Instructions</h1>
           <ul
             style={{
-              textAlign: "justify"
+              textAlign: "justify",
             }}
             className="list-none list-inside"
           >
@@ -76,6 +60,16 @@ export const RecipeDetails = () => {
           </ul>
         </div>
       </div>
+      <div className="">
+        <h1 className="text-4xl mt-8 mb-8 underline justify-items-center">
+          Related Recipe
+        </h1>
+        <div className="grid grid-rows-1 grid-cols-3 gap-10 justify-items-center">
+          {relatedRecipes.map((recipe, index) => (
+            <RecipeItem key={index} recipe={recipe} />
+          ))}
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
