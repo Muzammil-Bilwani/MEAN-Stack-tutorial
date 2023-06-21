@@ -8,14 +8,17 @@ export const RecipeDetails = () => {
   const navigate = useNavigate()
 
   const recipe = recipeList[id - 1]
-  const [items, setItems] = useState({recipeList})
+  // const [items, setItems] = useState({recipeList})
   
-  console.log({items})
-    const tobeskip = items.findIndex((item) => item.id === recipe.id)
-    items.splice(tobeskip, 1)
-    setItems([...items])
+  // console.log({items})
+  //   const tobeskip = items.findIndex((item) => item.id === recipe.id)
+  //   items.splice(tobeskip, 1)
+  //   setItems([...items])
 
-    console.log({items})
+  //   console.log({items})
+  const moreitems = recipeList.filter((e)=>e.id!==recipe.id
+  
+  )
 
   return (
     <div>
@@ -68,9 +71,9 @@ export const RecipeDetails = () => {
       </div>
       <div>
       <h1 className="text-4xl mt-8 mb-8">More Recipe</h1>
-      <div className="grid grid-rows-2 grid-cols-2 gap-12">
-        {items.map((rcpie, index) => (
-          <RecipeItem key={index} recipe={rcpie} />
+      <div className="grid grid-rows-1 grid-cols-3 gap-4">
+        {moreitems.map((item, index) => (
+          <RecipeItem key={index} recipe={item} />
         ))}
       </div>
     </div>
