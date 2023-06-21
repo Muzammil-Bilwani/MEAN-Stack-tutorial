@@ -58,4 +58,8 @@ export const RecipeDetails = () => {
       </div>
     </div>
   )
-}
+
+     } 
+     <div>
+      <RecipeDetails/>
+     </div>
