@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom"
 import { recipeList } from "./data"
+import { RecipeItem } from "./RecipeItem"
 
 export const RecipeDetails = () => {
   const { id } = useParams()
@@ -8,7 +9,7 @@ export const RecipeDetails = () => {
   const recipe = recipeList[id - 1]
 
   return (
-    <div>
+    <>
       <div className="flex justify-between items-center">
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -56,6 +57,15 @@ export const RecipeDetails = () => {
           </ul>
         </div>
       </div>
-    </div>
-  )
+      <div>
+        <h1 className="text-4xl mt-8 mb-8">You can also try our other recepies</h1>
+        <div className="flex ml-4">
+          {recipeList.map((recipe, index) => (
+            // eslint-disable-next-line react/jsx-no-undef
+            <RecipeItem key={index} recipe={recipe} />
+          ))}
+          </div>
+      </div>
+    </>
+      )
 }
