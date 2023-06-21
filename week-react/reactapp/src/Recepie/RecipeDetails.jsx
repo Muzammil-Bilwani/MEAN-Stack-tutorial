@@ -1,11 +1,21 @@
 import { useParams, useNavigate } from "react-router-dom"
 import { recipeList } from "./data"
+import { useState } from "react"
+import { RecipeItem } from "./RecipeItem"
 
 export const RecipeDetails = () => {
   const { id } = useParams()
   const navigate = useNavigate()
 
   const recipe = recipeList[id - 1]
+  const [items, setItems] = useState({recipeList})
+  
+  console.log({items})
+    const tobeskip = items.findIndex((item) => item.id === recipe.id)
+    items.splice(tobeskip, 1)
+    setItems([...items])
+
+    console.log({items})
 
   return (
     <div>
@@ -56,6 +66,14 @@ export const RecipeDetails = () => {
           </ul>
         </div>
       </div>
+      <div>
+      <h1 className="text-4xl mt-8 mb-8">More Recipe</h1>
+      <div className="grid grid-rows-2 grid-cols-2 gap-12">
+        {items.map((rcpie, index) => (
+          <RecipeItem key={index} recipe={rcpie} />
+        ))}
+      </div>
+    </div>
     </div>
   )
 }
