@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-export const RecipeItem = ({ recipe }) => {
+export const RecipeItem = ({ recipe, onClick }) => {
   return (
-    <Link to={`/details/${recipe.id}`}>
+    <Link onClick={onClick} to={`/details/${recipe.id}`}>
       <div className="shadow-lg rounded-2xl w-fit bg-white cursor-pointer hover:shadow-xl transition duration-200">
         <img
           style={{
