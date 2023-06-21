@@ -6,6 +6,8 @@ export const RecipeDetails = () => {
   const navigate = useNavigate()
 
   const recipe = recipeList[id - 1]
+  const morerecipes = recipeList.filter((element) => element.id !== recipe.id)
+  console.log(morerecipes) 
 
   return (
     <div>
@@ -55,7 +57,13 @@ export const RecipeDetails = () => {
             ))}
           </ul>
         </div>
+        </div>
+        <div><p className="text-4xl mt-8 mb-8">More Recipes</p>
+        <div className="grid grid-rows-1 grid-cols-3 gap-4">
+          {morerecipes.map((morerecipes,index) =>(
+          <RecipeItem key = {index} recipe={morerecipes}/>))}
       </div>
+    </div>
     </div>
   )
 }
