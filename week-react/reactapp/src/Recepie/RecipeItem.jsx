@@ -9,7 +9,7 @@ export const RecipeItem = ({ recipe }) => {
           style={{
             objectFit: "contain"
           }}
-          className="w-72"
+          // className="w-72"
           src={recipe.image}
           alt={recipe.name}
         />

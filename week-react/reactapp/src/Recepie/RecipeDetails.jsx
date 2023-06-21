@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom"
 import { recipeList } from "./data"
+import { RecipeItem } from "./RecipeItem"
 
 export const RecipeDetails = () => {
   const { id } = useParams()
@@ -13,10 +14,10 @@ export const RecipeDetails = () => {
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={() => {
-            navigate(-1)
+            navigate("/")
           }}
         >
-          Back
+         Back To Home
         </button>
         <h1 className="text-4xl mt-8 mb-8">{recipe.name}</h1>
       </div>
@@ -54,8 +55,17 @@ export const RecipeDetails = () => {
               <li key={index}>{instruction}</li>
             ))}
           </ul>
-        </div>
+          </div>
       </div>
+      <div><br />
+          <h1>For More...</h1>
+        </div><br />
+      <div className="grid grid-rows-2  grid-cols-2 gap-5">
+        {recipeList.map((recipe, index) => (
+          <RecipeItem key={index} recipe={recipe} />
+        ))
+        }
+    </div>
     </div>
   )
 }
