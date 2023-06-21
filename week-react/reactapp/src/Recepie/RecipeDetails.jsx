@@ -8,6 +8,9 @@ export const RecipeDetails = () => {
   const navigate = useNavigate();
   const recipe = recipeList[id - 1];
   const [otherRecipes, setOtherRecipes] = useState([]);
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0 });
+  };
   useEffect(() => {
     setOtherRecipes(
       recipeList.filter((e, i) => {
@@ -19,7 +22,7 @@ export const RecipeDetails = () => {
     <div>
       <div className="flex justify-between items-center">
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-blue-500 hover:bg-blue-700 text-white text-3xl font-bold py-2 px-4 rounded"
           onClick={() => {
             navigate(-1);
           }}
@@ -71,7 +74,7 @@ export const RecipeDetails = () => {
         <div className="flex justify-around gap-10 flex-wrap">
           {otherRecipes.length > 0
             ? otherRecipes.map((recipe, index) => (
-                <RecipeItem key={index} recipe={recipe} />
+                <RecipeItem onClick={scrollToTop} key={index} recipe={recipe} />
               ))
             : ""}
         </div>
