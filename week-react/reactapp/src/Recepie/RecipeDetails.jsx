@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom"
 import { recipeList } from "./data"
+import {RecipeItem} from "./RecipeItem"
 
 export const RecipeDetails = () => {
   const { id } = useParams()
