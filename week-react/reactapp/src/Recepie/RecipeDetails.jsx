@@ -1,5 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom"
+// import { recipeList } from "./data"
+import { RecipeItem } from "./RecipeItem"
 import { recipeList } from "./data"
+import './stylesheet.css'
+import { Link } from "react-router-dom"
 
 export const RecipeDetails = () => {
   const { id } = useParams()
@@ -56,6 +60,14 @@ export const RecipeDetails = () => {
           </ul>
         </div>
       </div>
+       <div className="cards">
+      <div className="grid grid-rows-2 grid-cols-2 gap-12">
+        
+        {recipeList.map((recipe, index) => (
+        <RecipeItem key={index} recipe={recipe} />
+        ))}
+      </div>
+      </div> 
     </div>
   )
 }
