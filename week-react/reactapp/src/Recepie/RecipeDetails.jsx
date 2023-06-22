@@ -1,50 +1,45 @@
-import { useParams, useNavigate } from "react-router-dom"
-import { recipeList } from "./data"
-import { useContext } from "react"
-import { ShoppingContext } from "../context/ShoppingContext"
+
+
+
+
+import { useParams, useNavigate } from "react-router-dom";
+import { recipeList } from "./data";
+import { RecipeItem } from "./RecipeItem";
+import { useEffect, useState } from "react";
 
 export const RecipeDetails = () => {
-  const { id } = useParams()
-  const navigate = useNavigate()
-  const { setIngredients } = useContext(ShoppingContext)
-
-  const recipe = recipeList[id - 1]
-
-  const routeToShop = () => {
-    setIngredients(recipe.ingredients)
-    navigate("/shop")
-  }
-
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const recipe = recipeList[id - 1];
+  const [otherRecipes, setOtherRecipes] = useState([]);
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0 });
+  };
+  useEffect(() => {
+    setOtherRecipes(
+      recipeList.filter((e, i) => {
+        return e.id != id;
+      })
+    );
+  }, [id]);
   return (
     <div>
       <div className="flex justify-between items-center">
         <button
-          style={{
-            fontSize: 16
-          }}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
+          className="bg-blue-500 hover:bg-blue-700 text-white text-3xl font-bold py-2 px-4 rounded"
           onClick={() => {
-            navigate(-1)
+            navigate(-1);
           }}
         >
           Back
         </button>
         <h1 className="text-4xl mt-8 mb-8">{recipe.name}</h1>
-        <button
-          onClick={routeToShop}
-          style={{
-            fontSize: 16
-          }}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
-        >
-          Shop Now
-        </button>
       </div>
       <div className="grid grid-cols-2 gap-4">
         <div>
           <img
             style={{
-              objectFit: "contain"
+              objectFit: "contain",
             }}
             src={recipe.image}
             alt={recipe.name}
@@ -66,7 +61,7 @@ export const RecipeDetails = () => {
           <h1 className="text-4xl mt-8 mb-8">Instructions</h1>
           <ul
             style={{
-              textAlign: "justify"
+              textAlign: "justify",
             }}
             className="list-none list-inside"
           >
@@ -76,6 +71,18 @@ export const RecipeDetails = () => {
           </ul>
         </div>
       </div>
+      <hr className="my-10" />
+      <div>
+        <h1 className="text-4xl mb-8">Other recipes</h1>
+
+        <div className="flex justify-around gap-10 flex-wrap">
+          {otherRecipes.length > 0
+            ? otherRecipes.map((recipe, index) => (
+                <RecipeItem onClick={scrollToTop} key={index} recipe={recipe} />
+              ))
+            : ""}
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
