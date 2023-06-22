@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom"
 import { recipeList } from "./data"
 import { useContext } from "react"
 import { ShoppingContext } from "../context/ShoppingContext"
-import { RecipeItem } from "./RecipeItem"
+
 export const RecipeDetails = () => {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -74,14 +74,6 @@ export const RecipeDetails = () => {
               <li key={index}>{instruction}</li>
             ))}
           </ul>
-        </div>
-      </div>
-      <div className="mt-4">
-        <h1 className="text-3xl mb-4">More Recipes </h1>
-        <div className="container flex justify-evenly items-center" >
-          {recipeList.map((recipe, index) => (
-              index+1!=id ? <RecipeItem key={index} recipe={recipe} /> : console.log("Error")
-          ))}
         </div>
       </div>
     </div>

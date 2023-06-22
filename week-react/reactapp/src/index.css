@@ -5,12 +5,11 @@
 }
 
 body {
-  background-color: #e3e9ff;
+  background-color: #f8f8f8;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 h1 {
