@@ -222,3 +222,344 @@ const App = () => {
 ### React Router
 
 React Router is a collection of navigational components that compose declaratively with your application. Whether you want to have bookmarkable URLs for your web app or a composable way to navigate in React Native, React Router works wherever React is rendering.
+
+#### Installation
+
+```bash
+yarn add react-router-dom
+```
+
+#### Basic Example
+
+```js
+import React from "react"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+
+const App = () => {
+  return (
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/users">
+            <Users />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  )
+}
+
+const Home = () => {
+  return <h2>Home</h2>
+}
+
+const About = () => {
+  return <h2>About</h2>
+}
+
+const Users = () => {
+  return <h2>Users</h2>
+}
+
+export default App
+```
+
+### React Context API
+
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+#### Introduction to Context API:
+
+The Context API is a feature in React that allows data to be passed through the component tree without explicitly passing props at every level.
+It provides a way to share data between components without the need for intermediate components to pass down props.
+Creating a Context:
+
+To create a new context, use the createContext function from the react package.
+
+##### Example:
+
+```jsx
+import React from "react"
+
+const MyContext = React.createContext()
+```
+
+#### Providing a Context:
+
+To provide data to components that consume the context, wrap the desired components with a Provider component.
+The Provider component accepts a value prop, which can be any data or object.
+Example:
+
+```jsx
+<MyContext.Provider value={data}>
+  {/* Components that consume the context */}
+</MyContext.Provider>
+```
+
+#### Consuming a Context:
+
+To consume the context within a component, use the useContext hook or the Consumer component.
+useContext hook example:
+
+```jsx
+import React, { useContext } from "react"
+
+function MyComponent() {
+  const data = useContext(MyContext)
+  // Use the data
+  return <div>{data}</div>
+}
+```
+
+#### Consumer component example:
+
+```jsx
+import React from "react"
+
+function MyComponent() {
+  return <MyContext.Consumer>{(data) => <div>{data}</div>}</MyContext.Consumer>
+}
+```
+
+#### Default Value:
+
+You can provide a default value to the context using the defaultValue prop when creating the context. This value is used when a matching Provider is not found in the component tree.
+Example:
+
+```jsx
+const MyContext = React.createContext("default value")
+```
+
+#### Updating the Context:
+
+The data in the context can be updated by modifying the value in the Provider component.
+Example:
+
+```jsx
+function MyComponent() {
+  const [data, setData] = useState("initial value")
+
+  const updateData = () => {
+    setData("new value")
+  }
+
+  return (
+    <MyContext.Provider value={data}>
+      <button onClick={updateData}>Update Context</button>
+    </MyContext.Provider>
+  )
+}
+```
+
+These are the basic concepts of the React Context API along with some example code. Feel free to modify and expand upon these examples to suit your specific needs.
+
+### React Forms
+
+#### Controlled Components
+
+In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with setState().
+
+We can combine the two by making the React state be the “single source of truth”. Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a “controlled component”.
+
+For example, if we want to make the previous example log the name when it is submitted, we can write the form as a controlled component:
+
+```jsx
+import React, { useState } from "react"
+
+const App = () => {
+  const [name, setName] = useState("")
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(name)
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Name:
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+  )
+}
+
+export default App
+```
+
+#### Uncontrolled Components
+
+In most cases, we recommend using controlled components to implement forms. In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
+
+To write an uncontrolled component, instead of writing an event handler for every state update, you can use a ref to get form values from the DOM.
+
+For example, this code accepts a single name in an uncontrolled component:
+
+```jsx
+import React, { useRef } from "react"
+
+const App = () => {
+  const inputRef = useRef()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(inputRef.current.value)
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Name:
+        <input type="text" ref={inputRef} />
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+  )
+}
+
+export default App
+```
+
+#### Controlled vs Uncontrolled Components
+
+In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
+
+To write an uncontrolled component, instead of writing an event handler for every state update, you can use a ref to get form values from the DOM.
+
+#### Controlled Components
+
+```jsx
+import React, { useState } from "react"
+
+const App = () => {
+  const [name, setName] = useState("")
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(name)
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Name:
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+  )
+}
+
+export default App
+```
+
+#### Uncontrolled Components
+
+```jsx
+import React, { useRef } from "react"
+
+const App = () => {
+  const inputRef = useRef()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(inputRef.current.value)
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Name:
+        <input type="text" ref={inputRef} />
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+  )
+}
+
+export default App
+```
+
+### Working with APIs in React
+
+#### Fetching Data with useEffect
+
+```jsx
+import React, { useState, useEffect } from "react"
+
+const App = () => {
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((data) => setUsers(data))
+  }, [])
+
+  return (
+    <div>
+      {users.map((user) => (
+        <div key={user.id}>{user.name}</div>
+      ))}
+    </div>
+  )
+}
+
+export default App
+```
+
+#### Fetching Data with Axios
+
+```jsx
+import React, { useState, useEffect } from "react"
+import axios from "axios"
+
+const App = () => {
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
+      setUsers(res.data)
+    })
+  }, [])
+
+  return (
+    <div>
+      {users.map((user) => (
+        <div key={user.id}>{user.name}</div>
+      ))}
+    </div>
+  )
+}
+
+export default App
+```
