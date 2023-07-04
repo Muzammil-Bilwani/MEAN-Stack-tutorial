@@ -1,0 +1,35 @@
+.weatherImage {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+}
+
+.city {
+    font-size: 48px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-family: inherit;
+    color: white;
+}
+
+.temperature {
+    font-size: 32px;
+    margin-top: 8px;
+    font-weight: 500;
+    font-family: inherit;
+    color: white;
+}
+
+.weatherDescription {
+    font-size: 24px;
+    margin-top: 8px;
+    font-weight: 500;
+    font-family: inherit;
+    color: white;
+}
+
+.details {
+    font-size: 16px;
+    margin-top: 8px;
+    color: white;
+}

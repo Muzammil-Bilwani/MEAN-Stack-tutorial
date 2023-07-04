@@ -3,11 +3,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { RecipeDetails } from "./Recepie/RecipeDetails"
 import { RecipeHome } from "./Recepie/RecipeHome"
 import { Shop } from "./Recepie/Shop"
+import { Weather } from "./weather/Weather"
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <RecipeHome />,
+    element: <Weather />,
     errorElement: (
       <>
         <h1>Oops!</h1>
